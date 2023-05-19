@@ -1,4 +1,4 @@
-package com.loisan.studysmarter;
+package com.loisan.studysmarter.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.TextView;
+
+import com.loisan.studysmarter.R;
+import com.loisan.studysmarter.ui.StoreScreen;
 
 import java.util.Locale;
 
@@ -57,6 +60,7 @@ public class HomeScreen extends AppCompatActivity {
                 home_reset_tv.setVisibility(View.VISIBLE);
                 pointsCount++;
                 home_points_tv.setText(pointsCount+"");
+                resetTimer();
             }
         }.start();
 
@@ -80,6 +84,7 @@ public class HomeScreen extends AppCompatActivity {
         updateCountDownText();
         home_reset_tv.setVisibility(View.INVISIBLE);
         home_start_pause_resume_tv.setVisibility(View.VISIBLE);
+        home_start_pause_resume_tv.setText(getString(R.string.start_str));
     }
 
     private void updateCountDownText() {

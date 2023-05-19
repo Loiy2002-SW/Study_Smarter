@@ -7,5 +7,6 @@
     <dimen name="pointsTextSize">35sp</dimen>
 
     <dimen name="marginAndPaddingForAllViews">5dp</dimen>
+    <dimen name="cardRadius">20dp</dimen>
 
 </resources>
