@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="timerTextSize">70sp</dimen>
+    <dimen name="startTextSize">45sp</dimen>
+    <dimen name="resetTextSize">40sp</dimen>
+    <dimen name="pointsTextSize">35sp</dimen>
+
+    <dimen name="marginAndPaddingForAllViews">5dp</dimen>
+
+</resources>

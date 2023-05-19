@@ -43,7 +43,7 @@
         android:textColor="@color/white"
         android:textSize="@dimen/pointsTextSize"
         app:layout_constraintEnd_toEndOf="@id/v_guideline2"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@id/v_guideline1"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -52,14 +52,14 @@
         android:id="@+id/home_timer_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:letterSpacing="0.1"
         android:padding="@dimen/marginAndPaddingForAllViews"
         android:text="25:00"
         android:textColor="@color/white"
         android:textSize="@dimen/timerTextSize"
         android:textStyle="bold|italic"
-        android:letterSpacing="0.1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintBottom_toTopOf="@+id/hor_guideline3"
+        app:layout_constraintEnd_toStartOf="@+id/v_guideline2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/hor_guideline1" />
 
@@ -72,25 +72,24 @@
         android:textColor="@color/white"
         android:textSize="@dimen/startTextSize"
         android:textStyle="bold|italic"
-        app:layout_constraintEnd_toEndOf="@id/v_guideline2"
-        app:layout_constraintHorizontal_bias="0.489"
-        app:layout_constraintStart_toStartOf="@id/v_guideline1"
-        app:layout_constraintTop_toBottomOf="@+id/hor_guideline2" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/v_guideline2"
+        app:layout_constraintTop_toTopOf="@+id/hor_guideline1" />
 
     <TextView
         android:id="@+id/home_reset_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/marginAndPaddingForAllViews"
+        android:enabled="false"
         android:text="@string/reset_str"
         android:textColor="@color/white"
         android:textSize="@dimen/resetTextSize"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/v_guideline2"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@id/v_guideline1"
-        app:layout_constraintTop_toTopOf="@+id/hor_guideline3" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/v_guideline2"
+        app:layout_constraintTop_toTopOf="@+id/hor_guideline2" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/v_guideline1"
