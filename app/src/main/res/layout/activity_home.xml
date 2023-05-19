@@ -86,6 +86,7 @@
         android:textColor="@color/white"
         android:textSize="@dimen/resetTextSize"
         android:textStyle="bold|italic"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/v_guideline2"
         app:layout_constraintHorizontal_bias="0.5"
