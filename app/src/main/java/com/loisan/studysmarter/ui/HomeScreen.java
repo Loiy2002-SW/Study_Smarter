@@ -3,9 +3,12 @@ package com.loisan.studysmarter.ui;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
 import com.loisan.studysmarter.R;
@@ -18,7 +21,10 @@ public class HomeScreen extends AppCompatActivity {
     TextView home_setting_tv, home_points_tv, home_store_tv,
              home_timer_tv, home_start_pause_resume_tv, home_reset_tv;
 
-    private static final long START_TIME_IN_MILLIS = 1500000;//1500000
+    MediaPlayer mediaPlayer;
+    Animation animation;
+
+    private static final long START_TIME_IN_MILLIS = 3000;//1500000
     static int pointsCount = 0;
     private CountDownTimer mCountDownTimer;
     private boolean mTimerRunning;
@@ -37,6 +43,8 @@ public class HomeScreen extends AppCompatActivity {
         home_start_pause_resume_tv = findViewById(R.id.home_start_pause_resume_tv);
         home_reset_tv = findViewById(R.id.home_reset_tv);
 
+
+
         home_start_pause_resume_tv.setOnClickListener(this::onTvClick);
         home_reset_tv.setOnClickListener(this::onTvClick);
         home_store_tv.setOnClickListener(this::onTvClick);
@@ -45,6 +53,7 @@ public class HomeScreen extends AppCompatActivity {
     }
 
     private void startTimer() {
+
         mCountDownTimer = new CountDownTimer(mTimeLeftInMillis, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
@@ -60,6 +69,11 @@ public class HomeScreen extends AppCompatActivity {
                 home_reset_tv.setVisibility(View.VISIBLE);
                 pointsCount++;
                 home_points_tv.setText(pointsCount+"");
+                mediaPlayer = MediaPlayer.create(HomeScreen.this, R.raw.sound_1);
+                mediaPlayer.start();
+
+                animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.bounce);
+                home_points_tv.startAnimation(animation);
                 resetTimer();
             }
         }.start();
