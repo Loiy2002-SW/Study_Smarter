@@ -20,8 +20,20 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="@dimen/marginAndPaddingForAllViews"
-            android:src="@drawable/bg_home_theme1_store"
+            android:src="@drawable/ic_theme1"
             android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/list_state_tv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/marginAndPaddingForAllViews"
+            android:drawableTop="@drawable/ic_lock"
+            android:gravity="center"
+            android:text="@string/locked_str"
+            android:textColor="@color/white"
+            android:textSize="@dimen/startTextSize" />
+
 
     </androidx.cardview.widget.CardView>
 
@@ -34,7 +46,7 @@
         android:drawablePadding="@dimen/marginAndPaddingForAllViews"
         android:text="4"
         android:textAlignment="center"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="@dimen/startTextSize"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

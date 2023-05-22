@@ -5,4 +5,7 @@
     <string name="pause_str">Pause</string>
     <string name="resume_str">Resume</string>
     <string name="zero_str">0</string>
+    <string name="used_str">Used</string>
+    <string name="locked_str">Locked</string>
+    <string name="not_enough_str">Not enough stars</string>
 </resources>

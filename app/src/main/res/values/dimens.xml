@@ -8,5 +8,6 @@
 
     <dimen name="marginAndPaddingForAllViews">5dp</dimen>
     <dimen name="cardRadius">20dp</dimen>
+    <dimen name="spaceUnderRecyclerView">100dp</dimen>
 
 </resources>

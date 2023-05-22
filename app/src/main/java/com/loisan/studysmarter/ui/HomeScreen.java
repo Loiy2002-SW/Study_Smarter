@@ -1,6 +1,7 @@
 package com.loisan.studysmarter.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
@@ -12,11 +13,15 @@ import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
 import com.loisan.studysmarter.R;
+import com.loisan.studysmarter.sharedPreferences.SharedPreferencesManager;
 import com.loisan.studysmarter.ui.StoreScreen;
 
 import java.util.Locale;
 
 public class HomeScreen extends AppCompatActivity {
+
+
+    ConstraintLayout home_root_layout;
 
     TextView home_setting_tv, home_points_tv, home_store_tv,
              home_timer_tv, home_start_pause_resume_tv, home_reset_tv;
@@ -24,8 +29,11 @@ public class HomeScreen extends AppCompatActivity {
     MediaPlayer mediaPlayer;
     Animation animation;
 
+
+    SharedPreferencesManager spm = SharedPreferencesManager.getInstance(this);
+
     private static final long START_TIME_IN_MILLIS = 3000;//1500000
-    static int pointsCount = 0;
+
     private CountDownTimer mCountDownTimer;
     private boolean mTimerRunning;
 
@@ -36,6 +44,9 @@ public class HomeScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        home_root_layout = findViewById(R.id.home_root_layout);
+        setHomeTheme(String.valueOf(spm.getCurrentTheme()), home_root_layout);
+
         home_setting_tv = findViewById(R.id.home_setting_tv);
         home_points_tv = findViewById(R.id.home_points_tv);
         home_store_tv = findViewById(R.id.home_store_tv);
@@ -43,6 +54,7 @@ public class HomeScreen extends AppCompatActivity {
         home_start_pause_resume_tv = findViewById(R.id.home_start_pause_resume_tv);
         home_reset_tv = findViewById(R.id.home_reset_tv);
 
+        home_points_tv.setText(spm.getPointsNumber()+"");
 
 
         home_start_pause_resume_tv.setOnClickListener(this::onTvClick);
@@ -67,13 +79,16 @@ public class HomeScreen extends AppCompatActivity {
                 home_start_pause_resume_tv.setText(getString(R.string.start_str));
                 home_start_pause_resume_tv.setVisibility(View.INVISIBLE);
                 home_reset_tv.setVisibility(View.VISIBLE);
-                pointsCount++;
-                home_points_tv.setText(pointsCount+"");
+
+                spm.updatePointsNumber(spm.getPointsNumber()+1);
+                home_points_tv.setText(spm.getPointsNumber()+"");
+
                 mediaPlayer = MediaPlayer.create(HomeScreen.this, R.raw.sound_1);
                 mediaPlayer.start();
 
                 animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.bounce);
                 home_points_tv.startAnimation(animation);
+
                 resetTimer();
             }
         }.start();
@@ -135,4 +150,46 @@ public class HomeScreen extends AppCompatActivity {
 
         }
     }
+
+
+    public void setHomeTheme(String currentTheme, ConstraintLayout background){
+
+        switch (currentTheme){
+
+            case "0":
+                background.setBackground(getDrawable(R.drawable.bg_home_theme1));
+                getWindow().setStatusBarColor(getColor(R.color.teal_700));
+                break;
+
+            case "1":
+                background.setBackground(getDrawable(R.drawable.bg_home_theme2));
+                getWindow().setStatusBarColor(getColor(R.color.yellow));
+                break;
+
+            case "2":
+                background.setBackground(getDrawable(R.drawable.bg_home_theme3));
+                getWindow().setStatusBarColor(getColor(R.color.purple_200));
+                break;
+
+            case "3":
+                background.setBackground(getDrawable(R.drawable.bg_home_theme4));
+                getWindow().setStatusBarColor(getColor(R.color.brown));
+                break;
+
+            case "4":
+                background.setBackground(getDrawable(R.drawable.bg_home_theme5));
+                getWindow().setStatusBarColor(getColor(R.color.green));
+                break;
+
+            case "5":
+                background.setBackground(getDrawable(R.drawable.bg_home_theme6));
+                getWindow().setStatusBarColor(getColor(R.color.gray));
+
+
+
+        }
+
+    }
+
+
 }
