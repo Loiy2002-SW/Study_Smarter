@@ -74,6 +74,7 @@ public class ThemesAdapter extends RecyclerView.Adapter<ThemesViewHolder> {
 
 
         Log.println(Log.INFO,"lololo","The current themes:"+openedThemes);
+
         holder.list_iv.setImageDrawable(themeList.get(position).getImg());
         holder.list_points_tv.setText(themeList.get(position).getPrice()+"");
 

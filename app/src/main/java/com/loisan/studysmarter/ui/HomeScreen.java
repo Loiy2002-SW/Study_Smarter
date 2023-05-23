@@ -14,7 +14,6 @@ import android.widget.TextView;
 
 import com.loisan.studysmarter.R;
 import com.loisan.studysmarter.sharedPreferences.SharedPreferencesManager;
-import com.loisan.studysmarter.ui.StoreScreen;
 
 import java.util.Locale;
 
@@ -163,7 +162,7 @@ public class HomeScreen extends AppCompatActivity {
 
             case "1":
                 background.setBackground(getDrawable(R.drawable.bg_home_theme2));
-                getWindow().setStatusBarColor(getColor(R.color.yellow));
+                getWindow().setStatusBarColor(getColor(R.color.pink));
                 break;
 
             case "2":

@@ -80,7 +80,7 @@ public class StoreScreen extends AppCompatActivity {
 
             case "1":
                 background.setBackground(getDrawable(R.drawable.bg_store_theme2));
-                getWindow().setStatusBarColor(getColor(R.color.yellow));
+                getWindow().setStatusBarColor(getColor(R.color.pink));
                 break;
 
             case "2":

@@ -52,7 +52,7 @@ public class SharedPreferencesManager {
 
         SharedPreferences  sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
 
-        return sharedPreferences.getInt(KEY_CURRENT_THEME_IN_NUMBER,1);
+        return sharedPreferences.getInt(KEY_CURRENT_THEME_IN_NUMBER,0);
 
     }
 
