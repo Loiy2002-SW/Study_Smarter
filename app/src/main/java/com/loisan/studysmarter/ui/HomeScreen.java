@@ -59,6 +59,7 @@ public class HomeScreen extends AppCompatActivity {
         home_start_pause_resume_tv.setOnClickListener(this::onTvClick);
         home_reset_tv.setOnClickListener(this::onTvClick);
         home_store_tv.setOnClickListener(this::onTvClick);
+        home_setting_tv.setOnClickListener(this::onTvClick);
 
 
     }
@@ -83,7 +84,10 @@ public class HomeScreen extends AppCompatActivity {
                 home_points_tv.setText(spm.getPointsNumber()+"");
 
                 mediaPlayer = MediaPlayer.create(HomeScreen.this, R.raw.sound_1);
-                mediaPlayer.start();
+                if (spm.isAllowedSound()){
+                    mediaPlayer.start();
+                }
+
 
                 animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.bounce);
                 home_points_tv.startAnimation(animation);
@@ -147,6 +151,11 @@ public class HomeScreen extends AppCompatActivity {
 
                 break;
 
+            case R.id.home_setting_tv:
+                openDialog();
+
+                break;
+
         }
     }
 
@@ -190,5 +199,9 @@ public class HomeScreen extends AppCompatActivity {
 
     }
 
+    private void openDialog(){
+        SettingsDialog dialog = new SettingsDialog();
+        dialog.show(getSupportFragmentManager(),"Dialog");
+    }
 
 }

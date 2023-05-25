@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/teal_700"
+    tools:context=".ui.SettingsDialog">
+
+
+
+    <TextView
+        android:id="@+id/settings_name_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/title_activity_settings"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/pointsTextSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/hor_guideline1"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space70dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/settings_name_tv" />
+
+    <Switch
+        android:id="@+id/settings_notification_sw"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="@string/notification_str"
+        android:textColor="@color/white"
+        android:textSize="@dimen/switchTextSize"
+        android:layout_margin="@dimen/marginAndPaddingForAllViews"
+        app:layout_constraintTop_toBottomOf="@id/hor_guideline2"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/settings_notification_sw" />
+
+
+    <Switch
+        android:id="@+id/settings_sound_sw"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="@string/sound_str"
+        android:textColor="@color/white"
+        android:layout_margin="@dimen/marginAndPaddingForAllViews"
+        android:textSize="@dimen/switchTextSize"
+        app:layout_constraintTop_toBottomOf="@id/hor_guideline3"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/settings_sound_sw" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/hor_guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.01" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/hor_guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/hor_guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

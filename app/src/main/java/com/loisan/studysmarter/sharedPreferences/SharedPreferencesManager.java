@@ -10,6 +10,8 @@ public class SharedPreferencesManager {
     private static final String KEY_OPENED_THEMES= "keyOpenedThemes";
 
     private static final String KEY_NUMBER_OF_POINTS= "KeyPoints";
+    private static final String KEY_NOTIFICATION = "KeyNotification";
+    private static final String KEY_SOUND= "KeySound";
 
 
     private static SharedPreferencesManager mInstance;
@@ -63,8 +65,6 @@ public class SharedPreferencesManager {
 
         editor.putInt(KEY_CURRENT_THEME_IN_NUMBER, number);
         editor.apply();
-
-
     }
 
     public void updatePointsNumber(int number){
@@ -86,7 +86,36 @@ public class SharedPreferencesManager {
 
     }
 
+    public void setKeyNotification(boolean status){
 
+        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        editor.putBoolean(KEY_NOTIFICATION, status);
+        editor.apply();
+    }
+
+    public boolean isAllowedNotification(){
+        SharedPreferences  sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+
+        return sharedPreferences.getBoolean(KEY_NOTIFICATION,false);
+    }
+
+
+    public void setKeySound(boolean status){
+
+        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        editor.putBoolean(KEY_SOUND, status);
+        editor.apply();
+    }
+
+    public boolean isAllowedSound(){
+        SharedPreferences  sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+
+        return sharedPreferences.getBoolean(KEY_SOUND,true);
+    }
 
 
 
