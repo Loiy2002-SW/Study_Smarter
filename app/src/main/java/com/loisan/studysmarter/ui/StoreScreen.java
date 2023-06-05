@@ -49,13 +49,20 @@ public class StoreScreen extends AppCompatActivity {
 
         List<Theme> themeList = new ArrayList<>();
 
-        themeList.add(new Theme(getDrawable(R.drawable.ic_theme1), 6));
-        themeList.add(new Theme(getDrawable(R.drawable.ic_theme2), 5));
-        themeList.add(new Theme(getDrawable(R.drawable.ic_theme3), 4));
-        themeList.add(new Theme(getDrawable(R.drawable.ic_theme4), 10));
-        themeList.add(new Theme(getDrawable(R.drawable.ic_theme5), 13));
-        themeList.add(new Theme(getDrawable(R.drawable.ic_theme6), 15));
+        //gradient-2-colors
+        themeList.add(new Theme(getDrawable(R.drawable.gradient_two_colors_theme1), 5));
+        themeList.add(new Theme(getDrawable(R.drawable.gradient_two_colors_theme2), 5));
+        themeList.add(new Theme(getDrawable(R.drawable.gradient_two_colors_theme3), 5));
+        themeList.add(new Theme(getDrawable(R.drawable.gradient_two_colors_theme4), 5));
+        themeList.add(new Theme(getDrawable(R.drawable.gradient_two_colors_theme5), 5));
 
+
+        //gradient-2-colors
+        themeList.add(new Theme(getDrawable(R.drawable.gradient_three_colors_theme1), 10));
+        themeList.add(new Theme(getDrawable(R.drawable.gradient_three_colors_theme2), 10));
+        themeList.add(new Theme(getDrawable(R.drawable.gradient_three_colors_theme3), 10));
+        themeList.add(new Theme(getDrawable(R.drawable.gradient_three_colors_theme4), 10));
+        themeList.add(new Theme(getDrawable(R.drawable.gradient_three_colors_theme5), 10));
 
         ThemesAdapter adapter = new ThemesAdapter(this, themeList);
 
@@ -74,34 +81,54 @@ public class StoreScreen extends AppCompatActivity {
         switch (currentTheme){
 
             case "0":
-                background.setBackground(getDrawable(R.drawable.bg_store_theme1));
+                background.setBackground(getDrawable(R.drawable.gradient_two_colors_theme1));
                 getWindow().setStatusBarColor(getColor(R.color.teal_700));
                 break;
 
             case "1":
-                background.setBackground(getDrawable(R.drawable.bg_store_theme2));
+                background.setBackground(getDrawable(R.drawable.gradient_two_colors_theme2));
                 getWindow().setStatusBarColor(getColor(R.color.pink));
                 break;
 
             case "2":
-                background.setBackground(getDrawable(R.drawable.bg_store_theme3));
-                getWindow().setStatusBarColor(getColor(R.color.purple_200));
+                background.setBackground(getDrawable(R.drawable.gradient_two_colors_theme3));
+                getWindow().setStatusBarColor(getColor(R.color.yellow));
                 break;
 
             case "3":
-                background.setBackground(getDrawable(R.drawable.bg_store_theme4));
-                getWindow().setStatusBarColor(getColor(R.color.brown));
+                background.setBackground(getDrawable(R.drawable.gradient_two_colors_theme4));
+                getWindow().setStatusBarColor(getColor(R.color.red));
                 break;
 
             case "4":
-                background.setBackground(getDrawable(R.drawable.bg_store_theme5));
-                getWindow().setStatusBarColor(getColor(R.color.green));
+                background.setBackground(getDrawable(R.drawable.gradient_two_colors_theme5));
+                getWindow().setStatusBarColor(getColor(R.color.blue));
                 break;
 
             case "5":
-                background.setBackground(getDrawable(R.drawable.bg_store_theme6));
-                getWindow().setStatusBarColor(getColor(R.color.gray));
+                background.setBackground(getDrawable(R.drawable.gradient_three_colors_theme1));
+                getWindow().setStatusBarColor(getColor(R.color.yellow));
+                break;
 
+            case "6":
+                background.setBackground(getDrawable(R.drawable.gradient_three_colors_theme2));
+                getWindow().setStatusBarColor(getColor(R.color.teal_200));
+                break;
+
+            case "7":
+                background.setBackground(getDrawable(R.drawable.gradient_three_colors_theme3));
+                getWindow().setStatusBarColor(getColor(R.color.pink));
+                break;
+
+            case "8":
+                background.setBackground(getDrawable(R.drawable.gradient_three_colors_theme4));
+                getWindow().setStatusBarColor(getColor(R.color.yellow));
+                break;
+
+            case "9":
+                background.setBackground(getDrawable(R.drawable.gradient_three_colors_theme5));
+                getWindow().setStatusBarColor(getColor(R.color.teal_700));
+                break;
 
 
         }

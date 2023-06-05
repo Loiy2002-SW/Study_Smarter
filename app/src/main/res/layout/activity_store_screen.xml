@@ -5,7 +5,7 @@
     android:id="@+id/store_root_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_store_theme1"
+    android:background="@drawable/gradient_two_colors_theme1"
     tools:context=".ui.StoreScreen">
 
 

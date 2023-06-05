@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="@dimen/marginAndPaddingForAllViews"
-            android:src="@drawable/ic_theme1"
+            android:src="@drawable/gradient_two_colors_theme1"
             android:scaleType="centerCrop" />
 
         <TextView
@@ -44,7 +44,6 @@
         android:drawableEnd="@drawable/ic_star"
         android:padding="@dimen/marginAndPaddingForAllViews"
         android:drawablePadding="@dimen/marginAndPaddingForAllViews"
-        android:text="4"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="@dimen/startTextSize"

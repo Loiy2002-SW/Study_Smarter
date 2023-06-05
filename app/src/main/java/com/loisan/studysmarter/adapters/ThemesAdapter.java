@@ -56,8 +56,11 @@ public class ThemesAdapter extends RecyclerView.Adapter<ThemesViewHolder> {
 
         //change the state of theme(used, locked, available).
         int currentTheme = spm.getCurrentTheme();
+
         Log.println(Log.INFO,"lololo","The current theme number is:"+currentTheme);
+
         String openedThemes = spm.getOpenedThemes();
+
 
         if (openedThemes.contains((position)+"")){
 
@@ -69,7 +72,7 @@ public class ThemesAdapter extends RecyclerView.Adapter<ThemesViewHolder> {
         if(currentTheme == position){
             holder.list_state_tv.setText(context.getString(R.string.used_str));
             holder.list_state_tv.setCompoundDrawablesRelative(null, null, null, null);
-
+            holder.list_points_tv.setVisibility(View.INVISIBLE);
         }
 
 

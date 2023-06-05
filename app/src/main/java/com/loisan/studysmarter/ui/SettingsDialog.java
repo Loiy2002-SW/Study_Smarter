@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatDialogFragment;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.app.Dialog;
 import android.os.Bundle;
@@ -18,6 +19,8 @@ import com.loisan.studysmarter.sharedPreferences.SharedPreferencesManager;
 public class SettingsDialog extends AppCompatDialogFragment {
 
     Switch swNotification, swSound;
+
+    ConstraintLayout settings_layout;
     SharedPreferencesManager spm = SharedPreferencesManager.getInstance(getContext());
     @NonNull
     @Override
@@ -30,7 +33,9 @@ public class SettingsDialog extends AppCompatDialogFragment {
 
         swNotification = view.findViewById(R.id.settings_notification_sw);
         swSound = view.findViewById(R.id.settings_sound_sw);
+        settings_layout = view.findViewById(R.id.settings_layout);
 
+        setSettingsTheme(String.valueOf(spm.getCurrentTheme()), settings_layout);
 
         if (spm.isAllowedSound()){
             swSound.setChecked(true);
@@ -40,21 +45,15 @@ public class SettingsDialog extends AppCompatDialogFragment {
             swNotification.setChecked(true);
         }
 
-        swNotification.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    spm.setKeyNotification(isChecked);
-                    swNotification.setChecked(isChecked);
+        swNotification.setOnCheckedChangeListener((buttonView, isChecked) -> {
+                spm.setKeyNotification(isChecked);
+                swNotification.setChecked(isChecked);
 
-            }
         });
 
-        swSound.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                spm.setKeySound(isChecked);
-                swSound.setChecked(isChecked);
-            }
+        swSound.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            spm.setKeySound(isChecked);
+            swSound.setChecked(isChecked);
         });
 
 
@@ -65,6 +64,57 @@ public class SettingsDialog extends AppCompatDialogFragment {
 
 
     }
+
+    public void setSettingsTheme(String currentTheme, ConstraintLayout background){
+
+        switch (currentTheme){
+
+            case "0":
+                background.setBackground(getActivity().getDrawable(R.drawable.gradient_two_colors_theme1));
+                break;
+
+            case "1":
+                background.setBackground(getActivity().getDrawable(R.drawable.gradient_two_colors_theme2));
+                break;
+
+            case "2":
+                background.setBackground(getActivity().getDrawable(R.drawable.gradient_two_colors_theme3));
+                break;
+
+            case "3":
+                background.setBackground(getActivity().getDrawable(R.drawable.gradient_two_colors_theme4));
+                break;
+
+            case "4":
+                background.setBackground(getActivity().getDrawable(R.drawable.gradient_two_colors_theme5));
+                break;
+
+            case "5":
+                background.setBackground(getActivity().getDrawable(R.drawable.gradient_three_colors_theme1));
+                break;
+
+            case "6":
+                background.setBackground(getActivity().getDrawable(R.drawable.gradient_three_colors_theme2));
+                break;
+
+            case "7":
+                background.setBackground(getActivity().getDrawable(R.drawable.gradient_three_colors_theme3));
+                break;
+
+            case "8":
+                background.setBackground(getActivity().getDrawable(R.drawable.gradient_three_colors_theme4));
+                break;
+
+            case "9":
+                background.setBackground(getActivity().getDrawable(R.drawable.gradient_three_colors_theme5));
+                break;
+
+
+
+        }
+
+    }
+
 
 
 

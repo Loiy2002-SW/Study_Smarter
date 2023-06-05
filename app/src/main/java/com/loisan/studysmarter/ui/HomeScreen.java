@@ -31,7 +31,7 @@ public class HomeScreen extends AppCompatActivity {
 
     SharedPreferencesManager spm = SharedPreferencesManager.getInstance(this);
 
-    private static final long START_TIME_IN_MILLIS = 3000;//1500000
+    private static final long START_TIME_IN_MILLIS = 1500000 ;
 
     private CountDownTimer mCountDownTimer;
     private boolean mTimerRunning;
@@ -62,6 +62,7 @@ public class HomeScreen extends AppCompatActivity {
         home_setting_tv.setOnClickListener(this::onTvClick);
 
 
+        spm.unlockTheme(String.valueOf(0));
     }
 
     private void startTimer() {
@@ -165,33 +166,54 @@ public class HomeScreen extends AppCompatActivity {
         switch (currentTheme){
 
             case "0":
-                background.setBackground(getDrawable(R.drawable.bg_home_theme1));
+                background.setBackground(getDrawable(R.drawable.gradient_two_colors_theme1));
                 getWindow().setStatusBarColor(getColor(R.color.teal_700));
                 break;
 
             case "1":
-                background.setBackground(getDrawable(R.drawable.bg_home_theme2));
+                background.setBackground(getDrawable(R.drawable.gradient_two_colors_theme2));
                 getWindow().setStatusBarColor(getColor(R.color.pink));
                 break;
 
             case "2":
-                background.setBackground(getDrawable(R.drawable.bg_home_theme3));
-                getWindow().setStatusBarColor(getColor(R.color.purple_200));
+                background.setBackground(getDrawable(R.drawable.gradient_two_colors_theme3));
+                getWindow().setStatusBarColor(getColor(R.color.yellow));
                 break;
 
             case "3":
-                background.setBackground(getDrawable(R.drawable.bg_home_theme4));
-                getWindow().setStatusBarColor(getColor(R.color.brown));
+                background.setBackground(getDrawable(R.drawable.gradient_two_colors_theme4));
+                getWindow().setStatusBarColor(getColor(R.color.red));
                 break;
 
             case "4":
-                background.setBackground(getDrawable(R.drawable.bg_home_theme5));
-                getWindow().setStatusBarColor(getColor(R.color.green));
+                background.setBackground(getDrawable(R.drawable.gradient_two_colors_theme5));
+                getWindow().setStatusBarColor(getColor(R.color.blue));
                 break;
 
             case "5":
-                background.setBackground(getDrawable(R.drawable.bg_home_theme6));
-                getWindow().setStatusBarColor(getColor(R.color.gray));
+                background.setBackground(getDrawable(R.drawable.gradient_three_colors_theme1));
+                getWindow().setStatusBarColor(getColor(R.color.yellow));
+                break;
+
+            case "6":
+                background.setBackground(getDrawable(R.drawable.gradient_three_colors_theme2));
+                getWindow().setStatusBarColor(getColor(R.color.teal_200));
+                break;
+
+            case "7":
+                background.setBackground(getDrawable(R.drawable.gradient_three_colors_theme3));
+                getWindow().setStatusBarColor(getColor(R.color.pink));
+                break;
+
+            case "8":
+                background.setBackground(getDrawable(R.drawable.gradient_three_colors_theme4));
+                getWindow().setStatusBarColor(getColor(R.color.yellow));
+                break;
+
+            case "9":
+                background.setBackground(getDrawable(R.drawable.gradient_three_colors_theme5));
+                getWindow().setStatusBarColor(getColor(R.color.teal_700));
+                break;
 
 
 
